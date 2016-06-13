@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context="com.asu.pick_me_graduation_project.activity.ChatActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="@dimen/toolbar_elevation"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        android:titleTextColor="@color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- TODO  add profile picture and user name here -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/receiverPP"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_user_small"/>
+
+            <TextView
+                android:id="@+id/receiverName"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Receiver name"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:visibility="invisible"
+                android:layout_gravity="left"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:transitionName="@string/transition_recentChat_list_to_chat"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/listViewChat"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#FFF8E1"
+            android:divider="#ffffff" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF8E1"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/MessageEditor"
+                android:layout_marginLeft="3dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/message_hint"
+                android:inputType="textMultiLine"
+                android:background="@drawable/rounded_corner_forchat2"
+                />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabSend"
+                style="@style/fab2"
+                android:layout_gravity="bottom|right"
+                app:fabSize="mini"
+
+                android:src="@drawable/ic_send_black_48dp"
+                app:theme="@style/ThemeOverlay.AppCompat.Light"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
